@@ -1,4 +1,5 @@
 using FocusListApi.Database;
+using FocusListApi.Services;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -9,6 +10,8 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+builder.Services.AddScoped<TaskService>();
 
 //------------------ Configuração de conexão padrão do banco de dados -----------------------
 var connectionString = builder.Configuration.GetConnectionString("AppDbConnectionString");
