@@ -7,7 +7,7 @@ namespace FocusListApi.Models
         public int Id { get; set; }
         
         [Required(ErrorMessage = "Insira um título, para poder criar a tarefa!")]
-        public String Title { get; set; }
+        public String Title { get; set; } = string.Empty;
 
         public Boolean Completed { get; set; }
     }
